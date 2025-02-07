@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Compressor Challenge</h1>
+        <p class="challenge-time">Challenge Starts In:</p>
+        <div id="countdown"></div>
+        
+        <div class="features">
+            <h2>Features</h2>
+            <ul>
+                <li>✅ High-quality image compression</li>
+                <li>✅ Supports JPG, PNG, WebP formats</li>
+                <li>✅ Drag & Drop functionality</li>
+                <li>✅ Real-time compression preview</li>
+                <li>✅ Download compressed images</li>
+                <li>✅ 24-hour challenge starting on <b>07/02/2025 at 1:00 PM</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #d9534f;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        function startCountdown() {
+            const eventTime = new Date("Feb 7, 2025 13:00:00").getTime();
+            const interval = setInterval(function () {
+                const now = new Date().getTime();
+                const remaining = eventTime - now;
+                if (remaining <= 0) {
+                    clearInterval(interval);
+                    document.getElementById("countdown").innerHTML = "Challenge Started!";
+                    return;
+                }
+                let days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+        startCountdown();
+    </script>
+</body>
+</html>
