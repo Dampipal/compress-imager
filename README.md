@@ -1,1 +1,1 @@
-##24 hour challenge
+24 hour challenge
